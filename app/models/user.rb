@@ -3,6 +3,6 @@ class User < ApplicationRecord
     validates :number, presence: true
     validates :email, presence: true
     validates :password_digest, presence: true
-    #has_secure_password
-    #install bcryt
+    has_secure_password
+    
 end
