@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     end
 
     def new
+        @user = User.new
         
     
     end
@@ -14,6 +15,12 @@ class UsersController < ApplicationController
     end
 
     def create
+        @user = User.new(user_params)
+        if @user.save
+            flash[:notice] = "You have successfully created an account"
+        else
+            render 'new'
+        end
         
     end
 
@@ -22,6 +29,12 @@ class UsersController < ApplicationController
     end
 
     def destroy
+        
+    end
+
+    private
+    def user_params
+        params.require(:user).permit(:name, :email, :password_digest, :number) 
         
     end
 
