@@ -1,0 +1,51 @@
+<%= render 'shared/errors', obj: @friend%>
+<div class= "container justify-content-center">
+    <div class= "row justify-content-center">
+        <div class= "col-6">
+            <%= form_with(model: @friend, class: "shadow p-3 mb-3 bg-info rounded", local: true) do |f| %>
+                <div class= "col-10">
+                    <div class="mb-3">
+                        <%= f.label :name, class: "form-label" %>
+                        <%= f.text_field :name, class: "form-control"%>
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                        <%= f.label :home_number, class: "form-label" %>
+                        <%= f.text_field :home_number, class: "form-control"%>
+                    </div>
+                    <div class="mb-3">
+                        <%= f.label :mobile_number, class: "form-label" %>
+                        <%= f.text_field :mobile_number, class: "form-control"%>
+                    </div>
+                    <div class="mb-3">
+                        <%= f.label :address, class: "form-label" %>
+                        <%= f.text_field :address, class: "form-control"%>
+                    </div>
+
+                    <div class="mb-3">
+                        <%= f.label :birthday, class: "form-label" %>
+                        <%= f.text_field :birthday, class: "form-control"%>
+                    </div>
+
+                    <div class="mb-3">
+                        <%= f.label :email, class: "form-label" %>
+                        <%= f.email_field :email, class: "form-control"%>
+                    </div>
+
+                    <%
+=begin%>
+                    <%if !logged_in? %>
+                        <div class="mb-3">
+                            <%= f.label :password_digest, class: "form-label" %>
+                            <%= f.password_field :password_digest, class: "form-control"%>
+                        </div>
+                    <%end%> 
+<%
+=end%>
+                    
+                    <%=f.submit(class: "btn btn-primary")%>
+                </div>
+            <%end%>
+        </div>
+    </div>
+</div>
