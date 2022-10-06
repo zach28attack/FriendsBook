@@ -4,6 +4,10 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
     end
 
+    def edit
+        @user = User.find(params[:id])
+    end
+
     def new
         @user = User.new
         
@@ -26,6 +30,14 @@ class UsersController < ApplicationController
     end
 
     def update
+        @user = User.find(params[:id])
+        
+        if @user.update(user_params)
+            flash[:notice] = "Update submitted successfully"
+            redirect_to user_path(@user)
+        else
+            render 'edit', status: :unprocessable_entity
+        end
         
     end
 
