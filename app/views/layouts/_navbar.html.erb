@@ -12,16 +12,23 @@
         </li>
         <li class="nav-item">
           
-          <%= link_to "Add friend", new_user_path, class: "nav-link"%>
+          <%= link_to "Add friend", new_friend_path, class: "nav-link"%>
+        </li>
+        <li class="nav-item">
+          
+          <%= link_to "Add user", new_user_path, class: "nav-link"%>
+        </li>
+        <li class="nav-item">
+          
+          <%= link_to "My Book", friends_path, class: "nav-link"%>
+
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             ProfileName
           </a>
           <ul class="dropdown-menu">
-            
-            <li><a><%= link_to "My Profile", root_path, class: "dropdown-item"%></a></li>
-            
+            <li><%= link_to "My Profile", root_path, class: "dropdown-item"%></li> 
             <li><a class="dropdown-item" href="#">Edit account</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Logout</a></li>
@@ -31,7 +38,7 @@
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-warning" type="submit">Search</button>
+        <button class="btn btn-outline-dark" type="submit">Search</button>
       </form>
     </div>
   </div>
