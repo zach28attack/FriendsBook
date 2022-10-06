@@ -40,12 +40,16 @@ class FriendsController < ApplicationController
     end
 
     def destroy
-            
+        @friend = Friend.find(params[:id])
+        @friend.destroy
+        flash[:alert] = "Contact information successfully deleted"
+        redirect_to friends_path
+        
     end
 
     private
     def friend_params
-        params.require(:friend).permit(:name, :home_number, :mobile_number, :address, :email, :birthday)
+        params.require(:friend).permit(:name, :home_number, :mobile_number, :address, :email)
         
     end
 end
