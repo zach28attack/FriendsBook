@@ -1,5 +1,6 @@
 class FriendsController < ApplicationController
     before_action :set_friend, only: [:edit, :update, :destroy]
+    
 
     def new
         @friend = Friend.new
@@ -11,7 +12,8 @@ class FriendsController < ApplicationController
     end
 
     def index
-        @friends = Friend.all 
+        @user = current_user
+        @friends = @user.friend.all
     end
 
     def edit
@@ -20,6 +22,7 @@ class FriendsController < ApplicationController
 
     def create
         @friend = Friend.new(friend_params)
+        @friend.user = current_user
         if @friend.save
             flash[:notice] = "You have successfully created a new friend contact"
             redirect_to friends_path
