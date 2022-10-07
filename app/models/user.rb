@@ -4,6 +4,6 @@ class User < ApplicationRecord
     validates :email, presence: true
     
     has_secure_password
-   # has_many :friends
+    has_many :friends
     
 end
