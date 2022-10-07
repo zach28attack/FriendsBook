@@ -47,10 +47,10 @@ class UsersController < ApplicationController
     end
 
     def destroy
-        
+
         @user.destroy
         flash[:alert] = "Account has been deleted"
-        
+        redirect_to users_path
     end
 
     private
