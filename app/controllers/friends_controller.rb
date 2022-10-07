@@ -1,6 +1,6 @@
 class FriendsController < ApplicationController
     before_action :set_friend, only: [:edit, :update, :destroy]
-    
+    before_action :require_user
 
     def new
         @friend = Friend.new
