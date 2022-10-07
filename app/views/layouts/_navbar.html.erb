@@ -7,22 +7,31 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
         <li class="nav-item">
           <%= link_to "Home", root_path, class: "nav-link active"%>
         </li>
-        <li class="nav-item">
-          
-          <%= link_to "Add friend", new_friend_path, class: "nav-link"%>
-        </li>
-        <li class="nav-item">
-          
-          <%= link_to "Add user", new_user_path, class: "nav-link"%>
-        </li>
-        <li class="nav-item">
-          
-          <%= link_to "My Book", friends_path, class: "nav-link"%>
 
-        </li>
+        <%if !logged_in?%>
+          <%= link_to "Log in", login_path, class: "nav-link"%>
+        <%end%>
+
+        <%if logged_in?%>
+          <li class="nav-item">
+            <%= link_to "Add friend", new_friend_path, class: "nav-link"%>
+          </li>
+
+          
+
+          <li class="nav-item">
+            <%= link_to "My Book", friends_path, class: "nav-link"%>
+          </li>
+        <%end%>
+        <%if !logged_in?%>
+          <li class="nav-item">
+            <%= link_to "Sign up", new_user_path, class: "nav-link"%>
+          </li>
+        <%end%>
         <%if logged_in?%>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
