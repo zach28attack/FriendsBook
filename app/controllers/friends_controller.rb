@@ -1,4 +1,5 @@
 class FriendsController < ApplicationController
+    before_action :set_friend, only: [:edit, :update, :destroy]
 
     def new
         @friend = Friend.new
@@ -14,7 +15,6 @@ class FriendsController < ApplicationController
     end
 
     def edit
-        @friend = Friend.find(params[:id])
         
     end
 
@@ -30,7 +30,7 @@ class FriendsController < ApplicationController
     end
 
     def update
-        @friend = Friend.find(params[:id])
+        
         if @friend.update(friend_params)
             flash[:notice] = "You have successfully updated a friend's contact information"
             redirect_to friends_path
@@ -40,7 +40,7 @@ class FriendsController < ApplicationController
     end
 
     def destroy
-        @friend = Friend.find(params[:id])
+        
         @friend.destroy
         flash[:alert] = "Contact information successfully deleted"
         redirect_to friends_path
@@ -52,4 +52,9 @@ class FriendsController < ApplicationController
         params.require(:friend).permit(:name, :home_number, :mobile_number, :address, :email)
         
     end
+
+    def set_friend
+        @friend = Friend.find(params[:id])
+    end
+
 end

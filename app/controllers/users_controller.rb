@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
+    before_action :require_user, only: [:edit, :update, :destroy]
+    before_action :set_user, only: [:show, :edit, :update, :destroy]
 
     def show
-        @user = User.find(params[:id])
+        
     end
 
     def edit
-        @user = User.find(params[:id])
+        
     end
 
     def new
@@ -30,7 +32,7 @@ class UsersController < ApplicationController
     end
 
     def update
-        @user = User.find(params[:id])
+        
         
         if @user.update(user_params)
             flash[:notice] = "Update submitted successfully"
@@ -43,12 +45,19 @@ class UsersController < ApplicationController
 
     def destroy
         
+        @user.destroy
+        flash[:alert] = "Account has been deleted"
+        
     end
 
     private
     def user_params
         params.require(:user).permit(:name, :email, :password) 
         
+    end
+
+    def set_user
+        @user = User.find(params[:id])
     end
 
 end
