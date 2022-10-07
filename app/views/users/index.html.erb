@@ -1,1 +1,10 @@
-<H1>#RESTRICT INDEX VIEW TO ADMIN ONLY#</H1>
+<H1>#ADMIN ONLY#</H1>
+<% @users.each do |user|%>
+    <ul>  
+        <li>
+        <%= user.name%>
+        <%= link_to "Delete User", user_path(user), class: "btn btn-outline-danger", method: :delete, form: { data:{ turbo_confirm: 'Are you sure?'}}%>
+    
+        </li>
+    </ul>
+<%end%>
