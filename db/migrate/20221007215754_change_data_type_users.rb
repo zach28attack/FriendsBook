@@ -1,3 +1,3 @@
-class ChangeDataTypeFriends < ActiveRecord::Migration[7.0]
+class ChangeDataTypeUsers < ActiveRecord::Migration[7.0]
   
 end
