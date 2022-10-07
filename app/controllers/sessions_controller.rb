@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
         if user && user.authenticate(params[:session][:password])
             session[:user_id] = user.id
             flash.now[:notice] = "You have successfully signed up!"
-            redirect_to user
+            redirect_to root_path
         else
             render 'new', status: :unprocessable_entity
             flash[:alert] = "There was a problem with your log in credentials"
@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
     
     def destroy
         session[:user_id] = nil
-        flash[:alert] = "Logout successful"
+        flash[:alert] = "You have logged out"
         redirect_to root_path   
     end
 end
