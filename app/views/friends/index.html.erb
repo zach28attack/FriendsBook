@@ -8,19 +8,15 @@
                     <div class= "container">
                     <%if friend.home_number and friend.mobile_number%>
                         <h6 class="card-subtitle mb-2 text-muted text-center"><%=friend.home_number%>  |  <%=friend.mobile_number%></h6>
-                    
                     <%elsif !friend.home_number%>
                         <h6 class="card-subtitle mb-2 text-muted"><%=friend.mobile_number%></h6>
-
                     <%else%>
                         <h6 class="card-subtitle mb-2 text-muted"><%=friend.home_number%></h6>
                     <%end%>
-                    
                     </div>
                     <%if friend.email%>
                         <p class="card-text text-center">Email: </br><%= friend.email %></p>
                     <%end%>
-
                     <%if friend.address%>
                         <p class="card-text text-center">Address: </br><%= friend.address %></p>
                     <%end%>

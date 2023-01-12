@@ -4,11 +4,9 @@ class FriendsController < ApplicationController
 
     def new
         @friend = Friend.new
-            
     end
 
     def show
-            
     end
 
     def index
@@ -17,7 +15,6 @@ class FriendsController < ApplicationController
     end
 
     def edit
-        
     end
 
     def create
@@ -29,11 +26,9 @@ class FriendsController < ApplicationController
         else
             render 'new', status: :unproccessable_entity
         end
-            
     end
 
     def update
-        
         if @friend.update(friend_params)
             flash[:notice] = "You have successfully updated a friend's contact information"
             redirect_to friends_path
@@ -43,21 +38,17 @@ class FriendsController < ApplicationController
     end
 
     def destroy
-        
         @friend.destroy
         flash[:alert] = "Contact information successfully deleted"
         redirect_to friends_path
-        
     end
 
     private
     def friend_params
         params.require(:friend).permit(:name, :home_number, :mobile_number, :address, :email)
-        
     end
 
     def set_friend
         @friend = Friend.find(params[:id])
     end
-
 end

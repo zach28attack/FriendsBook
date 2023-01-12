@@ -4,18 +4,13 @@ class UsersController < ApplicationController
 
 
     def show
-        
     end
 
     def edit
-        
     end
 
     def new
         @user = User.new
-        
-        
-    
     end
 
     def index
@@ -31,23 +26,18 @@ class UsersController < ApplicationController
         else
             render 'new', status: :unprocessable_entity
         end
-        
     end
 
     def update
-        
-        
         if @user.update(user_params)
             flash[:notice] = "Update submitted successfully"
             redirect_to user_path(@user)
         else
             render 'edit', status: :unprocessable_entity
         end
-        
     end
 
     def destroy
-
         @user.destroy
         flash[:alert] = "Account has been deleted"
         redirect_to users_path
@@ -56,11 +46,9 @@ class UsersController < ApplicationController
     private
     def user_params
         params.require(:user).permit(:name, :email, :password) 
-        
     end
 
     def set_user
         @user = User.find(params[:id])
     end
-
 end
