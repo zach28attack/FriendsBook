@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+:root {
+  --primary-color: #008585;
+  --secondary-color: #777380;
+  --b: #b9b7b2;
+  --text-color: #ffffe6;
+  --d: #bdb6af;
+}
