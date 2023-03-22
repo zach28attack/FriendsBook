@@ -1,20 +1,7 @@
-<div class= "container mt-4 justify-content-center">
-  <div class= "row justify-content-center">
-    <div class= "col-6">
-      <%= form_with(scope: :session, url: login_path, class: "shadow p-3 mb-3 bg-info rounded", local: true) do |f| %>
-        <div class= "col-10">
-          <div class="mb-3">
-            <%= f.label :email, class: "form-label" %>
-            <%= f.email_field :email, class: "form-control"%>
-            <div id="emailHelp" class="form-text">Please enter your sign-in credentials</div>
-          </div>
-          <div class="mb-3">
-            <%= f.label :password, class: "form-label" %>
-            <%= f.password_field :password, class: "form-control"%>
-          </div>
-          <%=f.submit(class: "btn btn-primary")%>
-        </div>
-      <%end%>
-    </div>
-  </div>
-</div>
+<%= form_with(scope: :session, url: login_path, local: true) do |f| %>
+  <%= f.label :email%>
+  <%= f.email_field :email%>
+  <%= f.label :password%>
+  <%= f.password_field :password%>
+  <%=f.submit%>
+<%end%>
