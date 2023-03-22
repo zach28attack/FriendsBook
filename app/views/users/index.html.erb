@@ -1,9 +1,9 @@
 <H1>#ADMIN ONLY#</H1>
 <% @users.each do |user|%>
-  <ul>  
+  <ul>
     <li>
-    <%= user.name%>
-    <%= button_to "Delete User", user_path(user), class: "btn btn-outline-danger", method: :delete, form: { data:{ turbo_confirm: 'Are you sure?'}}%>
+      <%= user.name%>
+      <%= button_to "Delete User", user_path(user), class: "btn btn-outline-danger", method: :delete, form: { data:{ turbo_confirm: 'Are you sure?'}}%>
     </li>
   </ul>
 <%end%>
