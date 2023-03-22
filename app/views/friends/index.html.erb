@@ -6,7 +6,7 @@
         <div class="card-body">
           <h5 class="card-title text-center"><%=friend.name%></h5>
           <div class= "container">
-            <%if friend.home_number and friend.mobile_number%>
+            <%if friend.home_number && friend.mobile_number%>
               <h6 class="card-subtitle mb-2 text-muted text-center"><%=friend.home_number%>  |  <%=friend.mobile_number%></h6>
             <%elsif !friend.home_number%>
               <h6 class="card-subtitle mb-2 text-muted"><%=friend.mobile_number%></h6>
@@ -16,18 +16,18 @@
           </div>
           <%if friend.email%>
             <p class="card-text text-center">Email: </br><%= friend.email %></p>
-        <%end%>
-        <%if friend.address%>
-          <p class="card-text text-center">Address: </br><%= friend.address %></p>
-      <%end%>
-      <div class= "container text-center">
-        <div class="btn-group">
-          <%= link_to "edit", edit_friend_path(friend), class: "btn btn-outline-success"%>
-          <%= button_to "Delete", friend_path(friend),  class: "btn btn-outline-danger", method: :delete, form: { data:{ turbo_confirm: 'Are you sure?'}}%>
+          <%end%>
+          <%if friend.address%>
+            <p class="card-text text-center">Address: </br><%= friend.address %></p>
+          <%end%>
+          <div class= "container text-center">
+            <div class="btn-group">
+              <%= link_to "edit", edit_friend_path(friend), class: "btn btn-outline-success"%>
+              <%= button_to "Delete", friend_path(friend),  class: "btn btn-outline-danger", method: :delete, form: { data:{ turbo_confirm: 'Are you sure?'}}%>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-</div>
 <%end%>
