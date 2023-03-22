@@ -24,7 +24,7 @@ class FriendsController < ApplicationController
             flash[:notice] = "You have successfully created a new friend contact"
             redirect_to friends_path
         else
-            render 'new', status: :unproccessable_entity
+            render 'new', status: :unprocessable_entity
         end
     end
 
@@ -33,7 +33,7 @@ class FriendsController < ApplicationController
             flash[:notice] = "You have successfully updated a friend's contact information"
             redirect_to friends_path
         else
-            render 'new', status: :unproccessable_entity
+            render 'new', status: :unprocessable_entity
         end
     end
 
