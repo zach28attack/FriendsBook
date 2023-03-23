@@ -1,6 +1,4 @@
 class Friend < ApplicationRecord
-validates :home_number, uniqueness: true, allow_blank: true
-validates :mobile_number, uniqueness: true, allow_blank: true
-
+validates :name, uniqueness: true, presence: true, length: {minimum:3, maximum:20}
 belongs_to :user
 end
