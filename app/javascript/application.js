@@ -4,6 +4,7 @@ import "controllers";
 
 ("use strict");
 
+// NAVBAR JS
 // dropdown functionality
 
 const dropdownToggle = document.querySelector(".dropdown-toggle");
