@@ -1,0 +1,31 @@
+<div class="grid-cell">
+  <div class="card-corners">
+    <div class="card">
+      <div class="card-header">
+        <p class="trunc"><%= friend.name %></p>
+      </div>
+      <div class="card-body">
+        <p class="card-numbers">
+        <%= "H: #{friend.home_number}" if !friend.home_number.empty?%>
+        <%= "|" if !friend.home_number.empty? && !friend.mobile_number.empty?%>
+        <%= "M: #{friend.mobile_number}" if !friend.mobile_number.empty?%>
+        </p>
+        <% if !friend.email.empty?%>
+          <div class="card-email">
+            <h4 class="card-email-title">Email</h4>
+            <p><%= friend.email %></p>
+          </div>
+        <%end%>
+        <div class="card-address">
+          <h4 class="card-address-title">Address</h4>
+          <p><%= friend.address %></p>
+        </div>
+        <div class="card-btns">
+        <button><%= link_to "edit", edit_friend_path(friend)%></button>
+        <%= button_to "Delete", friend_path(friend), method: :delete%>
+      </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
