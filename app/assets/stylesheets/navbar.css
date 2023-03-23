@@ -9,12 +9,12 @@
 }
 
 .nav-item {
-  color: var(--text-color);
+  color: var(--secondary-color);
 }
 
 .logo {
   font-size: 36px;
-  color: var(--text-color);
+  color: var(--secondary-color);
   margin-bottom: 2px;
 }
 
@@ -36,7 +36,7 @@ DROPDOWN
 .dropdown-toggle {
   font-size: 16px;
   padding: 5px 10px;
-  color: var(--text-color);
+  color: var(--secondary-color);
   background-color: var(--primary-color);
   border: solid 1px;
   /* border-radius: 20px; */
@@ -56,16 +56,16 @@ DROPDOWN
   background-color: var(--primary-color);
 }
 .dropdown-content li a:link {
-  color: var(--text-color);
+  color: var(--secondary-color);
 }
 .dropdown-content li a:visited {
-  color: var(--text-color);
+  color: var(--secondary-color);
 }
 .dropdown-content li a:hover {
-  color: var(--text-color);
+  color: var(--secondary-color);
 }
 .dropdown-content li a:active {
-  color: var(--text-color);
+  color: var(--secondary-color);
 }
 
 .hidden {
