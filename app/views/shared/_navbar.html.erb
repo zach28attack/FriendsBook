@@ -1,19 +1,21 @@
 <nav class="navbar">
-  <%= link_to "FriendsBook", root_path, class: "nav-link nav-logo" %>
+  <%= link_to "FriendsBook", root_path, class: "logo nav-item" %>
   <%if logged_in?%>
-    <%= link_to "My Book", friends_path, class: "nav-link" %>
-    <%= link_to "Add friend", new_friend_path, class: "nav-link" %>
-    <li>
-      <a>
-        <%=current_user.name%>
-      </a>
-      <ul>
-        <li><%= link_to "Edit Profile", edit_user_path(current_user), class: "nav-link"%></li>
-        <li><%= link_to "Logout", logout_path, class: "nav-link"%></li>
+    <div class="nav-links">
+      <%= link_to "My Book", friends_path, class: "nav-item" %>
+      <%= link_to "Add friend", new_friend_path, class: "nav-item" %>
+    </div>
+    <div class="dropdown">
+      <button class="dropdown-toggle"><%=current_user.name%></button>
+      <ul class="dropdown-content hidden">
+        <li><%= link_to "Edit Profile", edit_user_path(current_user), data: { turbo: false }%></li>
+        <li><%= link_to "Logout", logout_path, data: { turbo: false }%></li>
       </ul>
-    </li>
+    </div>
   <%else%>
-    <%= link_to "Sign up", new_user_path, class: "nav-link" %>
-    <%= link_to "Log in", login_path, class: "nav-link" %>
+    <div class="nav-links">
+      <%= link_to "Sign up", new_user_path, class: "nav-item" %>
+      <%= link_to "Log in", login_path, class: "nav-item" %>
+    </div>
   <%end%>
 </nav>
