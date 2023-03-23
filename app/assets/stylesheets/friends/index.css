@@ -1,0 +1,68 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 30rem;
+  margin: 10px;
+  gap: 20px;
+}
+.grid-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 
+CARD STYLING
+*/
+.card {
+  height: 100%;
+  width: 100%;
+  border-radius: 25px;
+  background-color: var(--secondary-color);
+}
+.card-corners {
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  height: 25rem;
+  width: 20rem;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+}
+.card-header {
+  height: 10%;
+  width: 100%;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 2rem;
+}
+.card-body {
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+}
+.card-email {
+  font-size: 1.5rem;
+}
+.card-email-title {
+  display: flex;
+  justify-content: center;
+}
+.card-address {
+  font-size: 1.5rem;
+}
+.card-address-title {
+  display: flex;
+  justify-content: center;
+}
+.card-numbers {
+  margin: 5px auto;
+  border-bottom: dotted;
+}
+.card-btns {
+  align-self: flex-end;
+}
