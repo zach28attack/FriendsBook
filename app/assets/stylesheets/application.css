@@ -16,10 +16,10 @@
 
 :root {
   --primary-color: #008585;
-  --secondary-color: #777380;
+  --secondary-color: #ffffe6;
+  /* --secondary-color: #777380;
   --b: #b9b7b2;
-  --text-color: #ffffe6;
-  --d: #bdb6af;
+  --d: #bdb6af; */
 }
 
 * {
@@ -31,4 +31,10 @@
 
 a:link {
   text-decoration: none;
+}
+
+.trunc {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
