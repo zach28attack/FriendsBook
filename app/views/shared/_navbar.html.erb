@@ -8,8 +8,8 @@
     <div class="dropdown">
       <button class="dropdown-toggle"><%=current_user.name%></button>
       <ul class="dropdown-content hidden">
-        <li><%= link_to "Edit Profile", edit_user_path(current_user), data: { turbo: false }%></li>
-        <li><%= link_to "Logout", logout_path, data: { turbo: false }%></li>
+        <li><%= link_to "Edit Profile", edit_user_path(current_user)%></li>
+        <li><%= link_to "Logout", logout_path%></li>
       </ul>
     </div>
   <%else%>
