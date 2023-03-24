@@ -32,6 +32,7 @@ triggerModals.forEach((triggerModal) => {
     const formModal = document.querySelector(".form-modal");
     if (form && !document.body.contains(formModal)) {
       document.body.appendChild(form);
+      form.querySelector("header").innerHTML += "<h1>Edit Friend</h1>";
     }
   });
 });
@@ -46,11 +47,12 @@ addFriendTriggerModal.addEventListener("click", () => {
   const formModal = document.querySelector(".form-modal");
   if (form && !document.body.contains(formModal)) {
     document.body.appendChild(form);
+    form.querySelector("header").innerHTML += "<h1>Add Friend</h1>";
   }
 
   // TODOs \\
 
-  // Add modal class to form and add page effects
+  // Add modal class to form and add page effects w CSS
 
   // remove modal if user clicks exit button or clicks off of modal
 
