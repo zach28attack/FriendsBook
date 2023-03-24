@@ -3,3 +3,6 @@
     <%= render partial: "card", locals:{friend: friend } %>
   <%end%>
 </div>
+<template id="new-friend-form">
+  <%=render partial: 'form', locals:{obj: Friend.new}%>
+</template>
