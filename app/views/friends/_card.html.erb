@@ -21,13 +21,11 @@
           <p><%= friend.address %></p>
         </div>
         <div class="card-btns">
-
         <button><%= link_to "Edit Friend", "#", id: "trigger-modal" %></button>
-
         <%= button_to "Delete", friend_path(friend), method: :delete%>
       </div>
       </div>
-      <template id="edit-friend-form">
+      <template id="edit_friend-form">
         <%=render partial: 'form', locals:{obj: friend}%>
       </template>
     </div>

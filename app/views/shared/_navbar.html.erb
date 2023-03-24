@@ -19,3 +19,6 @@
     </div>
   <%end%>
 </nav>
+<template id="new_friend-form">
+  <%=render partial: 'friends/form', locals:{obj: Friend.new}%>
+</template>
