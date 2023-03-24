@@ -3,7 +3,7 @@
   background-color: var(--primary-color);
   align-items: center;
   gap: 2rem;
-  height: 3rem;
+  height: 4rem;
   justify-content: space-between;
   padding: 0 1%;
 }
@@ -13,9 +13,10 @@
 }
 
 .logo {
-  font-size: 36px;
+  font-size: 48px;
   color: var(--secondary-color);
   margin-bottom: 2px;
+  padding: 1rem 1rem;
 }
 
 .nav-links {
@@ -23,6 +24,10 @@
   gap: 1rem;
   padding-top: 1%;
   font-size: 24px;
+  position: absolute;
+  margin-left: 40%;
+  margin-right: 50%;
+  white-space: nowrap;
 }
 /* 
 ___________________
