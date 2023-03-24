@@ -3,7 +3,7 @@
   <%if logged_in?%>
     <div class="nav-links">
       <%= link_to "My Book", friends_path, class: "nav-item" %>
-      <%= link_to "Add friend", new_friend_path, class: "nav-item" %>
+      <%= link_to "Add Friend", "#", id: "add_friend_trigger-modal", class: "nav-item"%>
     </div>
     <div class="dropdown">
       <button class="dropdown-toggle"><%=current_user.name%></button>
