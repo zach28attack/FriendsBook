@@ -44,6 +44,7 @@ CARD STYLING
   flex-direction: column;
   gap: 10px;
   height: 100%;
+  padding: 0 10px;
 }
 .card-email {
   font-size: 1.5rem;
@@ -82,4 +83,22 @@ CARD STYLING
   background-color: var(--primary-btn-hover);
   color: var(--primary-color);
   cursor: pointer;
+}
+#trigger-modal:link {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+#trigger-modal:visited {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+#trigger-modal:hover {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+#trigger-modal:active {
+  text-decoration: none;
+  color: var(--secondary-color);
 }
