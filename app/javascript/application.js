@@ -52,8 +52,6 @@ addFriendTriggerModal.addEventListener("click", () => {
 
   // TODOs \\
 
-  // Add modal class to form and add page effects w CSS
-
   // remove modal if user clicks exit button or clicks off of modal
 
   // when form is submitted and the window resets ,
