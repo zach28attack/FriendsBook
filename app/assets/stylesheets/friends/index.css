@@ -64,5 +64,22 @@ CARD STYLING
   border-bottom: dotted;
 }
 .card-btns {
-  align-self: flex-end;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10% auto;
+}
+.card button {
+  margin: 5px;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  padding: 5px;
+  border: none;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+}
+.card button:hover {
+  background-color: var(--primary-btn-hover);
+  color: var(--primary-color);
+  cursor: pointer;
 }
