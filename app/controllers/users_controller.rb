@@ -7,9 +7,11 @@ class UsersController < ApplicationController
     end
 
     def edit
+        @page = "Edit"
     end
 
     def new
+        @page = "New"
         @user = User.new
     end
 

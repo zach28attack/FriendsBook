@@ -1,10 +1,6 @@
 <div class="form-content">
   <%= form_with(scope: :session, url: login_path, local: true) do |f| %>
   <h1>Log In</h1>
-    <p>
-    <%= f.label :name%>
-    <%= f.text_field :name%>
-  </p>
   <p>
     <%= f.label :email%>
     <%= f.email_field :email%>

@@ -1,6 +1,6 @@
 
 <div class="form-content">
-<h1>Sign-up here!</h1>
+<h1><%="#{@page}"%></h1>
 <%= form_with(model: @user, local: true) do |f| %>
   <p>
     <%= f.label :name%>
