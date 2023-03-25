@@ -6,9 +6,9 @@
       </div>
       <div class="card-body">
         <p class="card-numbers">
-        <%= "H: #{friend.home_number}" if !friend.home_number.empty?%>
-        <%= "|" if !friend.home_number.empty? && !friend.mobile_number.empty?%>
-        <%= "M: #{friend.mobile_number}" if !friend.mobile_number.empty?%>
+          <%= "H: #{friend.home_number}" if !friend.home_number.empty?%>
+          <%= "|" if !friend.home_number.empty? && !friend.mobile_number.empty?%>
+          <%= "M: #{friend.mobile_number}" if !friend.mobile_number.empty?%>
         </p>
         <% if !friend.email.empty?%>
           <div class="card-email">
@@ -21,9 +21,9 @@
           <p><%= friend.address %></p>
         </div>
         <div class="card-btns">
-        <button><%= link_to "Edit Friend", "#", id: "trigger-modal" %></button>
-        <%= button_to "Delete", friend_path(friend), method: :delete%>
-      </div>
+          <button><%= link_to "Edit Friend", "#", id: "trigger-modal" %></button>
+          <%= button_to "Delete", friend_path(friend), method: :delete%>
+        </div>
       </div>
       <template id="edit_friend-form">
         <%=render partial: 'form', locals:{obj: friend}%>
