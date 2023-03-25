@@ -1,5 +1,5 @@
 <nav class="navbar">
-  <%= link_to "FriendsBook", root_path, class: "logo nav-item" %>
+  <%= link_to "FriendsBook", friends_path, class: "logo nav-item" %>
   <%if logged_in?%>
     <div class="nav-links">
       <%= link_to "My Book", friends_path, class: "nav-item" %>
