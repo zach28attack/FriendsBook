@@ -27,13 +27,29 @@ const triggerModals = document.querySelectorAll("#trigger-modal");
 triggerModals.forEach((triggerModal) => {
   triggerModal.addEventListener("click", (event) => {
     const formTemplate = findFormTemplate(event, "#edit_friend-form");
-    // Get the form element from the fragment
     const form = formTemplate.querySelector("#form");
     const formModal = document.querySelector(".form-modal");
+
     if (form && !document.body.contains(formModal)) {
-      document.body.appendChild(form);
+      document.body.appendChild(form.cloneNode(true));
       form.querySelector("header").innerHTML += "<h1>Edit Friend</h1>";
     }
+    // remove form modal
+    document.querySelector(".form-modal").addEventListener("click", (event) => {
+      const formModal = document.querySelector(".form-modal");
+      if (formModal) {
+        document.body.removeChild(formModal);
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        const formModal = document.querySelector(".form-modal");
+        if (formModal) {
+          document.body.removeChild(formModal);
+        }
+      }
+    });
   });
 });
 
@@ -41,19 +57,28 @@ const addFriendTriggerModal = document.querySelector(
   "#add_friend_trigger-modal"
 );
 addFriendTriggerModal.addEventListener("click", () => {
+  // display form modal
   const formTemplate = document.querySelector("#new_friend-form").content;
-  // get form element from fragment
   const form = formTemplate.querySelector("#form");
   const formModal = document.querySelector(".form-modal");
   if (form && !document.body.contains(formModal)) {
-    document.body.appendChild(form);
-    form.querySelector("header").innerHTML += "<h1>Add Friend</h1>";
+    document.body.appendChild(form.cloneNode(true));
+    document.querySelector("#form").querySelector("header").innerHTML +=
+      "<h1>Add Friend</h1>";
+
+    // remove form modal
+    document.querySelector(".form-modal").addEventListener("click", (event) => {
+      document.querySelector("#form").remove(form);
+      console.log(event.target);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        const formModal = document.querySelector(".form-modal");
+        if (formModal) {
+          document.body.removeChild(formModal);
+        }
+      }
+    });
   }
-
-  // TODOs \\
-
-  // remove modal if user clicks exit button or clicks off of modal
-
-  // when form is submitted and the window resets ,
-  // set window location at the location the user clicked the form
 });
