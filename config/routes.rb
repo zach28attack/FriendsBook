@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-   root "pages#home"
+   root "sessions#new"
    resources :users
    resources :friends
    get 'login', to: 'sessions#new'
