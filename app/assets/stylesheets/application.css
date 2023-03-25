@@ -17,9 +17,7 @@
 :root {
   --primary-color: #008585;
   --secondary-color: #ffffe6;
-  /* --secondary-color: #777380;
-  --b: #b9b7b2;
-  --d: #bdb6af; */
+  --primary-btn-hover: rgb(0, 113, 113);
 }
 
 * {
