@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
 
     def new
+        if session[:user_id]
+            redirect_to friends_path
+        end
     end
 
     def create
